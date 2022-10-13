@@ -805,9 +805,10 @@ function parseTwoOptionVote(tx) {
  */
 function isFlipstarter(tx, fee) {
   try {
-    if (fee < 3.9 || fee > 4.1) {
+    if (fee > 4.1) {
       return false;
     }
+
     if (tx.vin[0].coinbase) {
       return false;
     }
